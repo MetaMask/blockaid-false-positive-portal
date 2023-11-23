@@ -1,4 +1,4 @@
-name: Deploy Appealing Portal
+name: Deploy Github Pages
 
 on:
   push:
@@ -8,18 +8,27 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
 
       - name: Clear Cache
         run: |
           yarn cache clean
 
-      - name: Install dependencies and build
-        run: |
-          yarn install
-          yarn build
+      - name: Install npm dependencies
+        run: yarn --immutable
+
+      - name: Run build script
+        run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
