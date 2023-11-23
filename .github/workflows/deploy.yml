@@ -1,4 +1,4 @@
-name: Deploy Appealing Portal
+name: Deploy Github Pages
 
 on:
   push:
