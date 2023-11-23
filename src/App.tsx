@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Topbar from "./components/topbar/Topbar";
 import ConfirmationPage from "./pages/confirmation/ConfirmationPage";
+import ReportFormPage from "./pages/report-form/ReportFormPage";
 
 const router = createBrowserRouter([
   {
@@ -9,8 +10,13 @@ const router = createBrowserRouter([
     element: <ConfirmationPage />,
     
   },
+  {
+    path: "/report",
+    element: <ReportFormPage />,
+    
+  },
 ], {
-	basename: "/false-positive-portal/"
+	basename: "/"
 });
 
 function App() {

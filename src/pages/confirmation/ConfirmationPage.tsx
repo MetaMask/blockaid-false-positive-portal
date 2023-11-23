@@ -1,8 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import "./ConfirmationPage.css";
 
-const BLOCKAID_TICKETING_PORTAL = "https://mm-false-positive-portal.pages.dev/form/";
-
 function ConfirmationPage() {
   const [searchParams] = useSearchParams();
 
@@ -24,8 +22,8 @@ function ConfirmationPage() {
         <button
           className="continue"
           onClick={() => {
-              const externalURL = BLOCKAID_TICKETING_PORTAL + "?" + searchParams.toString();
-              window.location.href = externalURL;
+              const reportFormURL = "/report" + "?" + searchParams.toString();
+              window.location.href = reportFormURL;
             }
           }
         >
