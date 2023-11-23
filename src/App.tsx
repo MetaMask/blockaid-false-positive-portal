@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     
   },
   {
-    path: "/report",
+    path: "report",
     element: <ReportFormPage />,
     
   },

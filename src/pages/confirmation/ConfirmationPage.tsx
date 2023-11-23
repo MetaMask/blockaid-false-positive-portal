@@ -22,7 +22,7 @@ function ConfirmationPage() {
         <button
           className="continue"
           onClick={() => {
-              const reportFormURL = "/report" + "?" + searchParams.toString();
+              const reportFormURL = "report" + "?" + searchParams.toString();
               window.location.href = reportFormURL;
             }
           }
