@@ -28,7 +28,7 @@ jobs:
         run: yarn --immutable
 
       - name: Run build script
-        run: yarn build
+        run: yarn build && cp ./dist/index.html ./dist/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
