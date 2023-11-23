@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     
   },
 ], {
-	basename: "/"
+	basename: "/blockaid-false-positive-portal/"
 });
 
 function App() {
